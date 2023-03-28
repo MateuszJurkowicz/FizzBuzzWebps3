@@ -1,18 +1,30 @@
 ﻿@page
 @model IndexModel
 @{
-	ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
-	<h1 class="display-4">Cześć</h1>
+    <h1 class="display-4">Cześć @Model.Name</h1>
 
-	<span asp-validation-for="FizzBuzz.Number" class="text-danger"></span>
+    <span asp-validation-for="FizzBuzz.Number" class="text-danger"></span>
 
 
-	<form method="post">
-		<label asp-for="FizzBuzz.Number"></label>
-		<input asp-for="FizzBuzz.Number" /><br />
-		<button type="submit">Zatwierdź</button>
-	</form>
+    <form method="post">
+        <div class="mx-auto" style="width: 300px;">
+            <div class="row">
+                <input type="text" class="form-control" placeholder="Twoja liczba">
+            </div>
+
+            <div class="col-auto my-1">
+                <button type="submit" class="btn btn-primary">Zatwierdź</button>
+            </div>
+
+            <div class="alert alert-success" role="alert">
+                <h3 class=" alert-heading">This is a success alert—check it out!</h3>
+            </div>
+        </div>
+    </form>
+
+
 </div>

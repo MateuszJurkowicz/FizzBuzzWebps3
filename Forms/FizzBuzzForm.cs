@@ -4,8 +4,8 @@ namespace FizzBuzzWeb.Forms
 {
     public class FizzBuzzForm
     {
-        [Display(Name = "Twój szczęśliwy numerek:")]
-        [Required, Range(1, 1000, ErrorMessage = "Oczekiwana wartość {0} z zakresu {1} i {2}.")]
-        public int Number { get; set; }
+        [Display(Name = "Liczba:")]
+        [Required, Range(1, 1000, ErrorMessage = "Oczekiwana wartość liczby z zakresu {1} i {2}.")]
+        public int? Number { get; set; }
     }
 }
