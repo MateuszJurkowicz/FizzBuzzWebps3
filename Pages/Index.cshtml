@@ -6,25 +6,29 @@
 
 <div class="text-center">
     <h1 class="display-4">Cześć @Model.Name</h1>
-
     <span asp-validation-for="FizzBuzz.Number" class="text-danger"></span>
 
 
+
     <form method="post">
+
         <div class="mx-auto" style="width: 300px;">
             <div class="row">
-                <input type="text" class="form-control" placeholder="Twoja liczba">
+                <input type="text" name="Number" class="form-control" placeholder="Twoja liczba">
             </div>
 
             <div class="col-auto my-1">
                 <button type="submit" class="btn btn-primary">Zatwierdź</button>
             </div>
+        </div>
 
-            <div class="alert alert-success" role="alert">
-                <h3 class=" alert-heading">This is a success alert—check it out!</h3>
-            </div>
+
+        <div class="alert alert-success" role="alert">
+            <h8 class=" alert-heading">@Model.Result</h8>
         </div>
     </form>
+
+
 
 
 </div>
