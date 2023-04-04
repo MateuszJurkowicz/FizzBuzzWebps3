@@ -1,0 +1,20 @@
+﻿@page
+
+@model Controllers.SavedInSessionModel
+@{
+    ViewData["Title"] = "Data in session";
+}
+<p>Dane zapisane w sesji</p>
+
+
+<ul>
+    @foreach (var User in Model.UsersData)
+    {
+        if (User != null)
+        {
+            <li>
+                @User.Name, @User.Number - @(User.Result == "był" ? "rok przestępny" : "to nie był rok przestępny")
+            </li>
+        }
+    }
+</ul>

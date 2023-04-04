@@ -4,31 +4,49 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Cześć @Model.Name</h1>
-    <span asp-validation-for="FizzBuzz.Number" class="text-danger"></span>
+<span asp-validation-for="FizzBuzz.Number" class="text-danger"></span>
+<h1 style="text-align: center">Cześć</h1>
+<hr />
 
+<div class="row">
+    <div class="col">
+        <div class="card" style="max-width: 500px; margin: auto">
 
+            <div class="card-header">
 
-    <form method="post">
+                <div class="text-center">
+                    <h3>Podaj dane</h3>
+                </div>
 
-        <div class="mx-auto" style="width: 300px;">
-            <div class="row">
-                <input type="text" name="Number" class="form-control" placeholder="Twoja liczba">
             </div>
 
-            <div class="col-auto my-1">
-                <button type="submit" class="btn btn-primary">Zatwierdź</button>
+            <div class="card-body">
+                <form id="myForm" method="post">
+
+                    <div class="mb-3">
+                        <input asp-for=FizzBuzz.Number type="number" class="form-control" placeholder="Rok">
+                    </div>
+
+                    <div class="mb-3">
+                        <input asp-for=FizzBuzz.Name type="text" class="form-control" placeholder="Imię">
+                    </div>
+
+                    <div class="mb-3">
+                        <button id="submitBtn" type="submit" class="btn btn-primary">Zatwierdź</button>
+                    </div>
+
+                    <div class="alert alert-success" role="alert">
+                        <h8 class=" alert-heading">
+                            @Model.FizzBuzz.Name urodził/a się w @Model.FizzBuzz.Number roku. To @Model.FizzBuzz.Result rok przestępny
+                        </h8>
+
+                    </div>
+                </form>
             </div>
+
+            <div class="card-footer">
+            </div>
+
         </div>
-
-
-        <div class="alert alert-success" role="alert">
-            <h8 class=" alert-heading">@Model.Result</h8>
-        </div>
-    </form>
-
-
-
-
+    </div>
 </div>
